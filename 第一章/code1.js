@@ -7,14 +7,14 @@
 // JQuery 代码示例
 $("#app-JQuery") // 获取div
     .text("hello world-JQuery") // 设置文本内容
-    .on("click", ()=>{ // 绑定事件
-        alert("ok") 
+    .on("click", () => { // 绑定事件
+        alert("ok")
     })
 
 // 原生js 代码示例
 const divJS = document.querySelector("#app-JS") // 获取div
 divJS.innerText = "hello world-JS" // 设置文本内容
-divJS.addEventListener("click", ()=>{ // 绑定事件
+divJS.addEventListener("click", () => { // 绑定事件
     alert("ok")
 })
 
@@ -26,11 +26,16 @@ divHtml.innerHTML = html
 /**
  * code 25行 为了渲染出页面
  * 把字符串解析成DOM树，这里是一个DOM层面的计算，涉及DOM的运算要比JavaScript层面的计算性能差
- * 
- **/ 
+ **/
 
- const app = document.querySelector("#app");
- for(let i = 0; i<10000; i++){
-     cosnt div = document.createElement("div");
-     app.appendChild(div);
- }
+const app = document.querySelector("#app");
+for (let i = 0; i < 10000; i++) {
+    const div = document.createElement("div");
+    app.appendChild(div);
+}
+
+const appJS = [];
+for (let i = 0; i < 10000; i++) {
+    const div = { tag: "div" };
+    appJS.push(div);
+}
